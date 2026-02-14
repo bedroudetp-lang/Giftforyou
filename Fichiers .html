@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Proposal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff; /* White base */
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+                url('https://example.com/rose-pattern.png'), /* Replace with a realistic rose background image URL */
+                url('https://example.com/heart-pattern.png'); /* Replace with a heart pattern image URL */
+            background-size: cover, cover, cover, 200px 200px, 100px 100px;
+            background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat;
+            background-position: center, top left, bottom right, 0 0, 0 0;
+            color: #d32f2f; /* Red text */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white overlay for readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #d32f2f; /* Red */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b71c1c; /* Darker red */
+        }
+        .response {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        .yes-page {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bouquet {
+            width: 300px;
+            height: 300px;
+            background-image: url('https://example.com/realistic-bouquet.png'); /* Replace with a realistic bouquet image URL */
+            background-size: cover;
+            background-position: center;
+            margin: 20px 0;
+        }
+        .message {
+            font-size: 1.1em;
+            line-height: 1.5;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Salsabil, will you be my valentine? ❤️</h1>
+        <div class="buttons">
+            <button id="yes-btn">YES</button>
+            <button id="no-btn">NO</button>
+        </div>
+        <div id="no-response" class="response">
+            <p>Sorry! You can't say no, you are mine 😒👸🏻.</p>
+        </div>
+        <div id="yes-page" class="yes-page">
+            <div class="bouquet"></div>
+            <div class="message">
+                <p>You made an excellent choice😁, I would like to tell you that you are my princess, my soul, my paradise. I always wish you to be with me for life. Oh, you with your sweet cheeks. I will always love you and thank you for being in my life ❤️.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yes-btn');
+        const noBtn = document.getElementById('no-btn');
+        const noResponse = document.getElementById('no-response');
+        const yesPage = document.getElementById('yes-page');
+        const container = document.querySelector('.container');
+
+        noBtn.addEventListener('click', () => {
+            noResponse.style.display = 'block';
+            yesPage.style.display = 'none';
+        });
+
+        yesBtn.addEventListener('click', () => {
+            noResponse.style.display = 'none';
+            yesPage.style.display = 'flex';
+            container.style.justifyContent = 'flex-start'; // Adjust layout for the new content
+        });
+    </script>
+</body>
+</html>
